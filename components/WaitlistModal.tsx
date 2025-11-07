@@ -125,7 +125,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                 Welcome Aboard!
               </h2>
               <p className="text-gray-300 text-[1.1rem]">
-                You're on the waitlist. We'll notify you soon.
+                You&apos;re on the waitlist. We&apos;ll notify you soon.
               </p>
             </div>
           ) : (

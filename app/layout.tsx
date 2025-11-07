@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import BackgroundEffects from '@/components/BackgroundEffects'
 import ParticleBackground from '@/components/ParticleBackground'
+import { Analytics } from '@vercel/analytics/next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,6 +74,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
