@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
@@ -108,6 +109,12 @@ export default function RootLayout({
         </main>
         <Footer />
         <Analytics />
+        <Script
+          id="keak-script"
+          src="https://zzontar2hsjaawcn.public.blob.vercel-storage.com/scripts/domain-284-httpscelestial-studio-phi.vercel.app.js"
+          data-domain="284"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
