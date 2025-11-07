@@ -1,4 +1,4 @@
-# Phenomena Studio Website
+# Celestial Studio Website
 
 The official website for Phenomena Studio by Aratus - AI-Powered Robot Training Platform.
 
