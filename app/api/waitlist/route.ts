@@ -43,9 +43,20 @@ export async function POST(request: Request) {
         )
       }
 
+      // Table doesn't exist error
+      if (error.code === '42P01') {
+        console.error('Supabase table does not exist:', error)
+        return NextResponse.json(
+          { error: 'Database table not set up. Please contact support.' },
+          { status: 500 }
+        )
+      }
+
       console.error('Supabase error:', error)
+      console.error('Error code:', error.code)
+      console.error('Error message:', error.message)
       return NextResponse.json(
-        { error: 'Failed to join waitlist. Please try again.' },
+        { error: `Failed to join waitlist: ${error.message}` },
         { status: 500 }
       )
     }
