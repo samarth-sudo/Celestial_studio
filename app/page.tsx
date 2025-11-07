@@ -1,9 +1,16 @@
-import Link from 'next/link'
+'use client'
+
+import { useState } from 'react'
 import ScrollAnimation from '@/components/ScrollAnimation'
+import WaitlistModal from '@/components/WaitlistModal'
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <>
+      <WaitlistModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
       {/* Hero Section */}
       <section className="pt-[180px] pb-[120px] px-12 text-center max-w-[1400px] mx-auto relative z-10">
         <div className="inline-flex items-center gap-2.5 glass backdrop-blur-[10px] border border-white/20 px-6 py-2.5 rounded-full text-[0.85rem] font-semibold mb-8 animate-fade-in-up text-white/90 tracking-wide">
@@ -24,13 +31,13 @@ export default function Home() {
         </p>
 
         <div className="flex justify-center gap-6 flex-wrap animate-fade-in-up [animation-delay:0.5s] [animation-fill-mode:backwards]">
-          <Link
-            href="#"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="bg-white text-black px-12 py-5 rounded-full text-[1.2rem] font-extrabold transition-all duration-[400ms] hover:scale-105 hover:-translate-y-2 uppercase tracking-wide shadow-[0_10px_40px_rgba(255,255,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.5)] relative overflow-hidden group"
           >
             <span className="relative z-10">Waitlist Sign Up →</span>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-600" />
-          </Link>
+          </button>
         </div>
       </section>
 
@@ -187,12 +194,12 @@ export default function Home() {
               Join researchers and engineers training robots with AI.
             </p>
 
-            <Link
-              href="#"
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="inline-block relative z-10 bg-white text-black px-12 py-5 rounded-full text-[1.2rem] font-extrabold transition-all duration-[400ms] hover:scale-105 hover:-translate-y-2 uppercase tracking-wide shadow-[0_10px_40px_rgba(255,255,255,0.3)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.5)]"
             >
               Waitlist Sign Up →
-            </Link>
+            </button>
           </div>
         </ScrollAnimation>
       </section>
